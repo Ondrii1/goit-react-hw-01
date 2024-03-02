@@ -1,21 +1,22 @@
-module.exports = {
-  root: true,
-  env: { browser: true, es2020: true },
-  extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommended",
-  ],
-  ignorePatterns: ["dist", ".eslintrc.cjs"],
-  parserOptions: { ecmaVersion: "latest", sourceType: "module" },
-  settings: { react: { version: "18.2" } },
-  plugins: ["react-refresh"],
-  rules: {
-    "react/prop-types": 0,
-    "react-refresh/only-export-components": [
-      "warn",
-      { allowConstantExport: true },
-    ],
-  },
+import { Profile } from "./Profile/Profile";
+import userData from '../userData.json';
+import { FriendList } from "./FriendList/FriendList";
+import friends from '../friends.json'
+import transactions from '../transactions.json'
+import { TransactionHistory } from "./TransactionHistory/TransactionHistory";
+
+export const App = () => {
+  return (
+    <>
+      <Profile
+            name={userData.username}
+        tag={userData.tag}
+        location={userData.location}
+        image={userData.avatar}
+        stats={userData.stats}
+      />
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
+    </>
+  );
 };
