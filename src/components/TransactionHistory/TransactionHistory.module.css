@@ -15,7 +15,7 @@ td {
     text-align: center;
   }
   
-  .transactionHistory {
-    margin-left: 40px;
+  .transactionHistory {padding-top: 40px;
+    margin-left: 0px;
     border-spacing: 0;
   }
